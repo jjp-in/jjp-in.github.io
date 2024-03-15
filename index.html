@@ -3,18 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petrol Calculator</title>
+    <title>FuelCanBurner</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Petrol Calculator</h1>
+        <h1>FuelCanBurner</h1>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <!-- Add more menu items as needed -->
-            </ul>
+            <!-- Remove home and about menu items -->
         </nav>
     </header>
     <main>
@@ -24,15 +20,24 @@
                 <input type="number" id="distance" min="0" step="any">
             </div>
             <div class="input-group">
-                <label for="fuel">Fuel Efficiency (km/l):</label>
-                <input type="number" id="fuel" min="0" step="any">
+                <label for="fuelEfficiency">Fuel Efficiency (km/l):</label>
+                <input type="number" id="fuelEfficiency" min="0" step="any">
+            </div>
+            <div class="input-group">
+                <label for="fuelPrice">Fuel Price (in Rs.):</label>
+                <input type="range" id="fuelPrice" min="90" max="120" value="105">
+                <output id="fuelPriceOutput">105</output>
             </div>
             <div class="input-group">
                 <button onclick="calculate()">Calculate</button>
             </div>
             <div class="output-group">
-                <label for="result">Petrol Needed (litres):</label>
-                <output id="result"></output>
+                <label for="fuelNeeded">Fuel Needed (litres):</label>
+                <output id="fuelNeeded"></output>
+            </div>
+            <div class="output-group">
+                <label for="fuelCost">Cost of Fuel (in Rs.):</label>
+                <output id="fuelCost"></output>
             </div>
         </div>
     </main>
