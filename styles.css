@@ -64,3 +64,19 @@ main {
     display: block;
     margin-top: 10px;
 }
+/* Your existing CSS styles remain unchanged */
+
+/* Center align calculator */
+.center {
+    text-align: center;
+}
+
+/* Hide inactive modes */
+.mode {
+    display: none;
+}
+
+.mode.active {
+    display: block;
+}
+
