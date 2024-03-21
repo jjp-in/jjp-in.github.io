@@ -60,12 +60,15 @@ main {
     margin-bottom: 5px;
 }
 
-.input-group input[type="number"],
-.input-group select {
+.input-group input[type="number"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.input-group input[type="radio"] {
+    margin-right: 5px;
 }
 
 .input-group button {
@@ -95,13 +98,4 @@ output {
     border-radius: 5px;
     background-color: #f9f9f9;
     margin-top: 5px;
-}
-
-/* Hide inactive modes */
-.mode {
-    display: none;
-}
-
-.mode.active {
-    display: block;
 }
