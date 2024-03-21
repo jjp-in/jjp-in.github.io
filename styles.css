@@ -25,17 +25,14 @@ nav {
     margin-top: 10px;
 }
 
-nav button {
-    background-color: #555;
+nav a {
     color: #fff;
-    border: none;
+    text-decoration: none;
     padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
 }
 
-nav button:hover {
-    background-color: #777;
+nav a.active {
+    background-color: #555;
 }
 
 /* Main content styles */
@@ -44,7 +41,7 @@ main {
 }
 
 /* Calculator styles */
-#calculator {
+.calculator {
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -65,10 +62,6 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.input-group input[type="radio"] {
-    margin-right: 5px;
 }
 
 .input-group button {
