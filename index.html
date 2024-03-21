@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="center">
         <h1>FuelCanBurner</h1>
-        <!-- Add menu bar -->
+        <!-- Menu bar for calculator modes -->
         <nav>
             <button onclick="switchMode(1)">Mode 1</button>
             <button onclick="switchMode(2)">Mode 2</button>
@@ -19,37 +19,37 @@
     <main>
         <!-- Calculator interface -->
         <div id="calculator" class="center">
-            <!-- Input fields for Mode 1 -->
+            <!-- Input fields and outputs for Mode 1 -->
             <div id="mode1" class="mode active">
                 <div class="input-group">
-                    <label for="distance">Distance (in km):</label>
-                    <input type="number" id="distance" min="0" step="any">
+                    <label for="distance1">Distance (in km):</label>
+                    <input type="number" id="distance1" min="0" step="any">
                 </div>
                 <div class="input-group">
-                    <label for="fuelEfficiency">Fuel Efficiency (km/l):</label>
-                    <input type="number" id="fuelEfficiency" min="0" step="any">
+                    <label for="fuelEfficiency1">Fuel Efficiency (km/l):</label>
+                    <input type="number" id="fuelEfficiency1" min="0" step="any">
                 </div>
                 <div class="input-group">
-                    <label for="fuelPrice">Fuel Price (in Rs.):</label>
-                    <input type="number" id="fuelPrice" min="90" max="120" value="105">
+                    <label for="fuelPrice1">Fuel Price (in Rs.):</label>
+                    <input type="number" id="fuelPrice1" min="90" max="120" value="105">
                 </div>
                 <div class="input-group">
-                    <button onclick="calculate()">Calculate</button>
+                    <button onclick="calculateMode1()">Calculate</button>
                 </div>
                 <div class="output-group">
-                    <label for="fuelNeeded">Fuel Needed (litres):</label>
-                    <output id="fuelNeeded"></output>
+                    <label for="fuelNeeded1">Fuel Needed (litres):</label>
+                    <output id="fuelNeeded1"></output>
                 </div>
                 <div class="output-group">
-                    <label for="fuelCost">Cost of Fuel (in Rs.):</label>
-                    <output id="fuelCost"></output>
+                    <label for="fuelCost1">Cost of Fuel (in Rs.):</label>
+                    <output id="fuelCost1"></output>
                 </div>
             </div>
-            <!-- Input fields for Mode 2 -->
+            <!-- Input fields and outputs for Mode 2 -->
             <div id="mode2" class="mode">
                 <div class="input-group">
-                    <label for="money">Money you have (in Rs.):</label>
-                    <input type="number" id="money" min="0" step="any">
+                    <label for="money2">Money you have (in Rs.):</label>
+                    <input type="number" id="money2" min="0" step="any">
                 </div>
                 <div class="input-group">
                     <label for="fuelPrice2">Price of Fuel (in Rs.):</label>
@@ -71,7 +71,7 @@
                     <output id="fuelYouGet"></output>
                 </div>
             </div>
-            <!-- Input fields for Mode 3 -->
+            <!-- Input fields and outputs for Mode 3 -->
             <div id="mode3" class="mode">
                 <div class="input-group">
                     <label for="option">Select option:</label>
@@ -81,8 +81,8 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <label for="cost">Cost (in Rs.):</label>
-                    <input type="number" id="cost" min="0" step="any">
+                    <label for="cost3">Cost (in Rs.):</label>
+                    <input type="number" id="cost3" min="0" step="any">
                 </div>
                 <div class="input-group">
                     <label for="distance3">Distance travelled (in km):</label>
