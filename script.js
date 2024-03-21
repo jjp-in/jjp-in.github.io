@@ -1,35 +1,17 @@
-// Function to switch between calculator modes
-function switchMode(mode) {
-    // Hide all modes
-    var modes = document.querySelectorAll('.mode');
-    modes.forEach(function(mode) {
-        mode.classList.remove('active');
-    });
+// Function to calculate fuel needed and cost
+function calculateFuel() {
+    var distance = parseFloat(document.getElementById('distance').value);
+    var fuelEfficiency = parseFloat(document.getElementById('fuelEfficiency').value);
+    var fuelPrice = parseFloat(document.getElementById('fuelPrice').value);
 
-    // Show selected mode
-    var selectedMode = document.getElementById('mode' + mode);
-    selectedMode.classList.add('active');
-}
+    if (!isNaN(distance) && !isNaN(fuelEfficiency) && !isNaN(fuelPrice)) {
+        var fuelNeeded = distance / fuelEfficiency;
+        var fuelCost = fuelNeeded * fuelPrice;
 
-// Function to calculate mileage and total cost (Mode 3)
-function calculateMode3() {
-    var option = document.querySelector('input[name="calcOption"]:checked').value;
-    var value = parseFloat(document.getElementById('value3').value);
-    var distance = parseFloat(document.getElementById('distance3').value);
-
-    if (!isNaN(value) && !isNaN(distance)) {
-        if (option === 'refuel') {
-            var output1 = value / distance;
-            var output2 = value * distance;
-        } else if (option === 'totalFuel') {
-            var output1 = value * distance;
-            var output2 = value / distance;
-        }
-
-        document.getElementById('output1').textContent = output1.toFixed(2);
-        document.getElementById('output2').textContent = output2.toFixed(2);
+        document.getElementById('fuelNeeded').textContent = fuelNeeded.toFixed(2) + ' litres';
+        document.getElementById('fuelCost').textContent = 'Rs. ' + fuelCost.toFixed(2);
     } else {
-        document.getElementById('output1').textContent = 'Fill both parameters';
-        document.getElementById('output2').textContent = '';
+        document.getElementById('fuelNeeded').textContent = 'Fill all parameters';
+        document.getElementById('fuelCost').textContent = '';
     }
 }
