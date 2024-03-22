@@ -1,17 +1,33 @@
-// Function to calculate fuel needed and cost
-function calculateFuel() {
-    var distance = parseFloat(document.getElementById('distance').value);
-    var fuelEfficiency = parseFloat(document.getElementById('fuelEfficiency').value);
-    var fuelPrice = parseFloat(document.getElementById('fuelPrice').value);
+function calculate() {
+    // Get input values
+    let distance = parseFloat(document.getElementById('distance').value);
+    let fuelPrice = parseFloat(document.getElementById('fuelPrice').value);
+    let mileage = parseFloat(document.getElementById('mileage').value);
 
-    if (!isNaN(distance) && !isNaN(fuelEfficiency) && !isNaN(fuelPrice)) {
-        var fuelNeeded = distance / fuelEfficiency;
-        var fuelCost = fuelNeeded * fuelPrice;
+    // Calculate outputs
+    let fuelNeeded = distance / mileage;
+    let totalCost = fuelNeeded * fuelPrice;
 
-        document.getElementById('fuelNeeded').textContent = fuelNeeded.toFixed(2) + ' litres';
-        document.getElementById('fuelCost').textContent = 'Rs. ' + fuelCost.toFixed(2);
-    } else {
-        document.getElementById('fuelNeeded').textContent = 'Fill all parameters';
-        document.getElementById('fuelCost').textContent = '';
-    }
+    // Update output fields
+    document.getElementById('fuelNeeded').value = fuelNeeded.toFixed(2);
+    document.getElementById('totalCost').value = totalCost.toFixed(2);
+
+    // Add event listeners to editable output fields
+    document.getElementById('fuelNeeded').addEventListener('input', updateCalculations);
+    document.getElementById('totalCost').addEventListener('input', updateCalculations);
+}
+
+function updateCalculations() {
+    // Get edited output values
+    let editedFuelNeeded = parseFloat(document.getElementById('fuelNeeded').value);
+    let editedTotalCost = parseFloat(document.getElementById('totalCost').value);
+
+    // Recalculate input values based on edited outputs
+    let distance = parseFloat(document.getElementById('distance').value);
+    let fuelPrice = editedTotalCost / editedFuelNeeded;
+    let mileage = distance / editedFuelNeeded;
+
+    // Update input fields with recalculated values
+    document.getElementById('fuelPrice').value = fuelPrice.toFixed(2);
+    document.getElementById('mileage').value = mileage.toFixed(2);
 }
