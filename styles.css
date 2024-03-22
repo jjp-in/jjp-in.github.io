@@ -99,3 +99,13 @@ output {
     background-color: #f9f9f9;
     margin-top: 5px;
 }
+
+/* New styles for editable output fields */
+.output-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 5px;
+}
