@@ -79,33 +79,4 @@ main {
     cursor: pointer;
 }
 
-.input-group button:hover {
-    background-color: #0056b3;
-}
-
-.output-group {
-    margin-top: 15px;
-}
-
-.output-group label {
-    font-weight: bold;
-}
-
-output {
-    display: block;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-top: 5px;
-}
-
-/* New styles for editable output fields */
-.output-group input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-top: 5px;
-}
+.i
